@@ -3,23 +3,23 @@
 **Main goal:** Measure NUMA latency and penalties  
 **Tools:** Build and run numa_sweep via collect_numa_cache.py, with numactl and optional perf stat
 
-Reference results measured by the maintainer on the system shown in each section (generator TEMPLATE_00_146 · recorded 2026-11-18). Your own runs write `results/RESULTS_ACTUAL.md` in the same format.
+Reference results measured by the maintainer on the system shown in each section (generator TEMPLATE_00_148 · recorded 2026-11-19). Your own runs write `results/RESULTS_ACTUAL.md` in the same format.
 
 > Smoke runs use deliberately small sizes. They check that the workload installs and runs end to end; their numbers are not performance results. Baseline and extended are.
 
 <!-- profile:smoke -->
 ## smoke
 
-- **System:** 1× AMD Instinct MI300X VF (196288 MB) · INTEL(R) XEON(R) PLATINUM 8568Y+ · Ubuntu 26.04.1 LTS · kernel 7.0.0-38-generic · driver 7.1.9.31600000
-- **Run:** 2026-11-18T10:55:18Z · status **PASS** (exit 0)
-- **Time (mm:ss):** setup 00:05 · benchmark 00:01 · whole run 00:12
-- **Source:** run 310_20261118_105518
+- **System:** 1× AMD Instinct MI300X VF (196288 MB) · INTEL(R) XEON(R) PLATINUM 8568Y+ · Ubuntu 26.04.1 LTS · kernel 7.0.0-43-generic · driver 7.1.9.31600000
+- **Run:** 2026-11-19T15:14:25Z · status **PASS** (exit 0)
+- **Time (mm:ss):** setup 00:05 · benchmark 00:01 · whole run 00:13
+- **Source:** run 310_20261119_151425
 - **Command:** `bash run_benchmark.sh --smoke --source-numa-node 0 --target-numa-node 0,remote --num-threads 1 --thread-affinity strict --working-set-size 32768,2097152,268435456 --cache-level L1,L3,DRAM --access-pattern random --stride 64 --num-iterations 20000`
 
 | # | Metric | Result |
 |---|---|---|
-| 1 | Largest cache-tier pointer-chase latency, ns (cache_latency_nsec) | 64.2948 |
-| 2 | Local DRAM pointer-chase latency, ns (local_numa_node_latency_nsec) | 158.666 |
-| 3 | Pointer-chase payload rate, GB/s (local_dram_pointer_chase_bandwidth_gb_s) | 0.0504 |
-| 4 | DRAM-tier cache misses/s (cache_miss_counters_misses_sec) | 45269760.374351 |
+| 1 | Largest cache-tier pointer-chase latency, ns (cache_latency_nsec) | 92.18 |
+| 2 | Local DRAM pointer-chase latency, ns (local_numa_node_latency_nsec) | 156.3762 |
+| 3 | Pointer-chase payload rate, GB/s (local_dram_pointer_chase_bandwidth_gb_s) | 0.0512 |
+| 4 | DRAM-tier cache misses/s (cache_miss_counters_misses_sec) | 43234445.911966 |
 <!-- /profile:smoke -->
