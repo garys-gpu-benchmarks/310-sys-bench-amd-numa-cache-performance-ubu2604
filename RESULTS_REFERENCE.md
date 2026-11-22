@@ -11,15 +11,15 @@ Reference results from the validation run on the system shown in each section (r
 ## smoke
 
 - **System:** 1× AMD Instinct MI300X VF (196288 MB) · INTEL(R) XEON(R) PLATINUM 8568Y+ · Ubuntu 26.04.1 LTS · kernel 7.0.0-43-generic · driver 7.1.9.31600000
-- **Run:** 2026-11-22T10:53:58Z · status **PASS** (exit 0)
-- **Time (mm:ss):** setup 00:05 · benchmark 00:02 · whole run 00:12
-- **Source:** run 310_20261122_105358
+- **Run:** 2026-11-22T14:22:21Z · status **PASS** (exit 0)
+- **Time (mm:ss):** setup 00:32 · benchmark 00:01 · whole run 00:39
+- **Source:** run 310_20261122_142221
 - **Command:** `bash run_benchmark.sh --smoke --source-numa-node 0 --target-numa-node 0,remote --num-threads 1 --thread-affinity strict --working-set-size 32768,2097152,268435456 --cache-level L1,L3,DRAM --access-pattern random --stride 64 --num-iterations 20000`
 
 | # | Metric | Result |
 |---|---|---|
-| 1 | Largest cache-tier pointer-chase latency, ns (cache_latency_nsec) | 66.2886 |
-| 2 | Local DRAM pointer-chase latency, ns (local_numa_node_latency_nsec) | 142.6986 |
-| 3 | Pointer-chase payload rate, GB/s (local_dram_pointer_chase_bandwidth_gb_s) | 0.0561 |
-| 4 | DRAM-tier cache misses/s (cache_miss_counters_misses_sec) | 46164108.972886 |
+| 1 | Largest cache-tier pointer-chase latency, ns (cache_latency_nsec) | 73.0759 |
+| 2 | Local DRAM pointer-chase latency, ns (local_numa_node_latency_nsec) | 143.4761 |
+| 3 | Pointer-chase payload rate, GB/s (local_dram_pointer_chase_bandwidth_gb_s) | 0.0558 |
+| 4 | DRAM-tier cache misses/s (cache_miss_counters_misses_sec) | 45052369.26106 |
 <!-- /profile:smoke -->
